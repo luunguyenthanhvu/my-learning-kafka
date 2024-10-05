@@ -275,3 +275,36 @@ stream of data </b>.
 </details> 
 </details> 
 </details>
+
+<details>
+  <summary>
+    <b>Event-Driven Architecture </b>
+  </summary>
+
+* <details>
+  <summary>
+  <b>What is event-driven architecture?</b>
+  </summary>
+
+  - Event-driven architecture (EDA) là một `software design pattern`
+  - Ý tưởng của `EDA` là các ứng dụng khác nhau có thể bất `đồng bộ tương tác được với nhau` 
+    > + 1 ứng dụng có thể `produce` (tạo ra) các `events/message` gửi lên platform trung gian gọi là 
+    `event broker/mesage broker` sau đó có nhiều ứng dụng khác `consume` (tiêu thụ) các event/message này
+    gọi là `consumer`.
+    > + Các ứng dụng này có thể gửi và nhận các `event/message` được với nhau một cách <b> bất đồng bộ </b>.
+
+    ![Hình ảnh Kafka](./images-note/event-driven1.png)
+  
+    > VD: `Chúng ta có 1 ứng dụng là order services`
+    > + Giả dụ chúng ta có order services, khi chúng ta tạo đơn hàng sẽ tạo ra 1 order `event/message`
+    gửi lên `Message broker` (1 ứng dụng trung gian) theo kiến trúc event driven thì `Message broker` sẽ lưu lại các
+    `message/event` này.
+    > + Tùy vào thiết kế của từng server thì `Message broker` sẽ gửi cho các `Consumer`.
+    > + Ở đây 2 `Consumer`: Shipment service, Email service sẽ nhận `event/message` từ `Message broker` và tiếp nhận 
+    nhiệm vụ của riêng nó.
+  
+  - Trong kiến trúc `Event-driven` này thì các ứng dụng có thể được viết bằng <b> bất cứ ngôn ngữ nào </b>.
+  - Kiến trúc `Event-driven` được tương tác với nhau 1 cách <b> bất đồng bộ </b>. 
+</details> 
+</details> 
+

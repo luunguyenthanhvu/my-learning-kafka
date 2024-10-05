@@ -1,0 +1,17 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /demo
+
+spring:
+  application:
+    name: kafka-demo
+
+  kafka:
+    consumer:
+      bootstrap-servers: 9094
+      group-id: demo-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
