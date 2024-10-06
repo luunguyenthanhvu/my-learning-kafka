@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: notification-service
+  servlet:
+    context-path: /notification
+  profiles:
+    active: default
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:29092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: '*'
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+    listener:
+      ack-mode: manual
