@@ -1,0 +1,26 @@
+
+# Kafka server URL
+spring:
+  kafka:
+    bootstrap-servers: "${HOST_IP_ADDRESS:localhost}:9092,${HOST_IP_ADDRESS:localhost}:9093,${HOST_IP_ADDRESS:localhost}:9094"
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      auto-offset-reset: earliest
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    port: 587
+    username: vuluudragonslayer@gmail.com
+    password: cchu dykb fdrk vpmm
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+server:
+  port: 8081

@@ -1,4 +1,4 @@
-package vuluu.account_service.model;
+package vuluu.accountservice.model;
 
 import java.util.Date;
 
